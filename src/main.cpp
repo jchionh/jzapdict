@@ -14,7 +14,7 @@ invocation_response JzapWordQueryHandler(invocation_request const& request)
     auto payload = json::JSON::Load(request.payload);
     std::string wordQuery = payload["word"].ToString();
 
-    // change to uppercase
+    // change to lowercase
     std::transform(wordQuery.begin(), wordQuery.end(), wordQuery.begin(), ::tolower);
 
     // query to find the word in our dict
